@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz no3 KHS Mahasiswa</title>
+    <script>
+        function hitungNilai() {
+            var namaMahasiswa = document.getElementById('namaMahasiswa').value;
+            var nilaiTugas = parseFloat(document.getElementById('nilaiTugas').value);
+            var nilaiUTS = parseFloat(document.getElementById('nilaiUTS').value);
+            var nilaiUAS = parseFloat(document.getElementById('nilaiUAS').value);
+            var nilaiKHS = (nilaiTugas * 0.2) + (nilaiUTS * 0.3) + (nilaiUAS * 0.5);
+
+
+            var nilaiHuruf;
+            if (nilaiKHS >= 90) {
+                nilaiHuruf = 'A';
+            } else if (nilaiKHS >= 80) {
+                nilaiHuruf = 'B';
+            } else if (nilaiKHS >= 70) {
+                nilaiHuruf = 'C';
+            } else if (nilaiKHS >= 60) {
+                nilaiHuruf = 'D';
+            } else {
+                nilaiHuruf = 'E';
+            }
+
+
+            alert("Nama Mahasiswa: " + namaMahasiswa + "\nNilai KHS: " + nilaiKHS.toFixed(2) + "\nNilai Huruf: " + nilaiHuruf);
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="color: blue;">Input Nilai Mahasiswa</h1>
+    <label for="namaMahasiswa">Nama Mahasiswa:</label>
+    <input type="text" id="namaMahasiswa"><br><br>
+
+    <label for="nilaiTugas">Nilai Tugas:</label>
+    <input type="number" id="nilaiTugas"><br><br>
+
+    <label for="nilaiUTS">Nilai UTS:</label>
+    <input type="number" id="nilaiUTS"><br><br>
+
+    <label for="nilaiUAS">Nilai UAS:</label>
+    <input type="number" id="nilaiUAS"><br><br>
+
+    <button onclick="hitungNilai()">Hitung Nilai KHS</button>
+
+</body>
+</html>
